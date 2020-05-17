@@ -10,8 +10,8 @@ function SearchResultContainer() {
   let searcbyFood = (query) => {
     API.search(query)
     .then((response) => {
-      console.log(response.data.businesses);
       setResultState([...response.data.businesses]);
+      console.log(response);
     })
     .catch((err) => {
       console.log(err);
