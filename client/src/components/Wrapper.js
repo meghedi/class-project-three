@@ -6,7 +6,7 @@ function Wrapper(props){
        <div className="container">
     <div className="jumbotron text-center">
         <h1 className="display-4">Five Star Foodies </h1>
-        <p className="lead">Search for your favorite food best restuarnats</p>
+        <p className="lead">Search for your favorite foods and best restaurants</p>
      </div>
      <div>
        {props.children}
