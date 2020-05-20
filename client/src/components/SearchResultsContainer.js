@@ -11,12 +11,18 @@ function SearchResultContainer() {
     API.search(query)
     .then((response) => {
       setResultState([...response.data.businesses]);
-      console.log(response);
+      console.log(response.data.businesses);
     })
     .catch((err) => {
       console.log(err);
     });
   };
+
+  const saveRestaurant = searchData => {
+    console.log(searchData);
+    API.saveRestaurant(searchData).then((res)=>console.log(res)
+     ).catch(err => console.log(err));
+  }
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -33,10 +39,14 @@ function SearchResultContainer() {
     setSearchState(event.target.value);
   };
 
+  const handleSave = searchData =>{
+    saveRestaurant(searchData);
+  }
+
   return (
     <div>
       <SearchForm search={searchState} handleFormSubmit={handleFormSubmit} handleInputChange={handleInputChange} />
-      <SearchResults results={resultState} />
+      <SearchResults results={resultState} handleSave={handleSave} />
     </div>
   );
 }

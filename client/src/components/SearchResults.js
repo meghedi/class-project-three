@@ -1,4 +1,5 @@
 import React from "react";
+import Media from "./Media";
 
 function SearchResults(props) {
   return(
@@ -7,7 +8,13 @@ function SearchResults(props) {
     <ul className="list-group">
       {props.results.map(result => (
         <li className="list-group-item mb-3" key={result.id}>
-          here
+       <Media 
+          restaurant={result.name} 
+          image={result.image_url} 
+          cuisines={result.categories}
+          link = {result.link}
+          handleSave={()=>props.handleSave({restaurant: result.name, cuisines:result.categories, image:result.image_url, link:result.link})}/>
+          />
         </li>
       ))}
     </ul>
