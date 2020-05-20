@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
 const restaurantSchema = new Schema({
   restaurant: { type: String, required: true },
   cuisines: { type: [], required: true },
