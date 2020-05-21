@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "reactstrap";
 
 const styles = {
     footerStyle: {
@@ -10,12 +11,33 @@ const styles = {
     }
   };
 
-function Footer(){
-    return(
-  <footer style={styles.footerStyle}>
-      Done by Americ, Kelli, Randy and Meg @2020
-  </footer>
-    )
+// function Footer(){
+//     return(
+//   <footer style={styles.footerStyle}>
+//       Done by Americ, Kelli, Randy and Meg @2020
+//   </footer>
+//     )
+// }
+
+// export default Footer;
+
+function DefaultFooter() {
+  return (
+    <footer className="footer">
+      <Container>
+        <div className="copyright" id="copyright">
+          © {new Date().getFullYear()}, Designed and coded {" "}
+          <a
+            href="https://github.com/meghedi/class-project-three"
+            target="_blank"
+          >
+            Meghedi Hacopi, Kelli , Randy Amos & Americ Ngwije
+          </a>
+          .
+        </div>
+      </Container>
+    </footer>
+  );
 }
 
-export default Footer;
+export default DefaultFooter;
