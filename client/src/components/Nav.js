@@ -8,7 +8,7 @@ function Nav() {
     <ul className="nav nav-tabs nav-fill">
       <li className="nav-item">
         <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Home
+          Five Star Foodies
         </Link>
       </li>
       <li className="nav-item">
