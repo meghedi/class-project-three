@@ -19,7 +19,7 @@ function SearchResults(props) {
       ))}
     </ul>
     ):(
-      <h3>No Results to Display</h3>
+      <h3></h3>
     )}
     </>
   );

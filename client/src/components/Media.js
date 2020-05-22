@@ -13,7 +13,7 @@ const styles = {
 function Media({restaurant, cuisines,rating, image, link, handleSave}) {
   return (
     <div className="media">
-      <img className="mr-3" src={image} alt={restaurant} />
+      <img className="mr-3" src={image} alt={restaurant} width="320" height="320" />
       <div className="media-body">
         <h5 className="mt-0"><a href={link} target="_blank">{restaurant}</a></h5>
       </div>
@@ -21,7 +21,7 @@ function Media({restaurant, cuisines,rating, image, link, handleSave}) {
         type="button"
         id="btnSave"
         style={styles.buttonStyle}
-        className="btn btn-default"
+        className="btn btn-primary"
         onClick={handleSave}
       >
         Save
