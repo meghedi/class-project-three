@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Search from './components/pages/Search';
 import Login from './components/pages/Login';
 // import NavBar from './components/NavBar';
-import Nav from './components/Nav';
+import Nav from './components/Navbars/Navbarsexamples';
 import './App.css';
 // import IndexHeader from './components/Headers/IndexHeader';
 
