@@ -3,6 +3,7 @@ import SearchResultContainer from '../SearchResultsContainer';
 import Wrapper from "../Wrapper";
 import Footer from "../Footer";
 
+
 function Search() {
   return (
     <Wrapper>

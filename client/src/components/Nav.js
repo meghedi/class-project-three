@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from './NavBar';
 
 function Nav() {
   return (
@@ -11,12 +12,13 @@ function Nav() {
         </Link>
       </li>
       <li className="nav-item">
-        <Link
+        <Navbar />
+        {/* <Link
           to="/login"
           className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
         >
           Login
-        </Link>
+        </Link> */}
       </li>
     </ul>
   );

@@ -2,11 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Search from './components/pages/Search';
 import Login from './components/pages/Login';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import Nav from './components/Nav';
 import './App.css';
+// import IndexHeader from './components/Headers/IndexHeader';
 
 import { useAuth0 } from "./react-auth0-spa";
+
+// react-bootstrap css (required)
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const { loading } = useAuth0();
@@ -20,7 +24,8 @@ function App() {
       <header>
         <Router>
           <Nav />
-          <NavBar />
+          {/* <NavBar /> */}
+          {/* <IndexHeader /> */}
           <Route exact path="/" component={Search} />
         </Router>
 
