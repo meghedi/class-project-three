@@ -1,15 +1,15 @@
 import React from "react";
 import { Container } from "reactstrap";
 
-const styles = {
-    footerStyle: {
-      position: "relative",
-      padding: 10,
-      textAlign:"center",
-      borderTop: "1px solid #ccc",
-      marginTop:30
-    }
-  };
+// const styles = {
+//     footerStyle: {
+//       position: "relative",
+//       padding: 10,
+//       textAlign:"center",
+//       borderTop: "1px solid #ccc",
+//       marginTop:30
+//     }
+//   };
 
 // function Footer(){
 //     return(
