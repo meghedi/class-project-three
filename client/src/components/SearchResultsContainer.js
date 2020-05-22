@@ -43,9 +43,13 @@ function SearchResultContainer() {
     saveRestaurant(searchData);
   }
 
+  const keyPressed = event =>{
+    if (event.key === "Enter") {handleFormSubmit(event)}
+  } 
+
   return (
     <div>
-      <SearchForm search={searchState} handleFormSubmit={handleFormSubmit} handleInputChange={handleInputChange} />
+      <SearchForm search={searchState} handleFormSubmit={handleFormSubmit} handleInputChange={handleInputChange} handleKeyPress={keyPressed}/>
       <SearchResults results={resultState} handleSave={handleSave} />
     </div>
   );
