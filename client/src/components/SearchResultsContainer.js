@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
 import API from "../utils/API";
+import FoodCard from "./FoodCard";
+
 
 function SearchResultContainer() {
   const [searchState, setSearchState] = useState("");
@@ -51,6 +53,7 @@ function SearchResultContainer() {
     <div>
       <SearchForm search={searchState} handleFormSubmit={handleFormSubmit} handleInputChange={handleInputChange} handleKeyPress={keyPressed}/>
       <SearchResults results={resultState} handleSave={handleSave} />
+      <FoodCard handleSelect={searcbyFood} />
     </div>
   );
 }

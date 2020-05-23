@@ -1,16 +1,15 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Search from './components/pages/Search';
-import Login from './components/pages/Login';
-// import NavBar from './components/NavBar';
-import Nav from './components/Navbars/Navbarsexamples';
-import './App.css';
+import Search from "./components/pages/Search";
+import Saved from "./components/pages/Saved";
+import Navigation from "./components/Navigation";
+import "./App.css";
 // import IndexHeader from './components/Headers/IndexHeader';
 
 import { useAuth0 } from "./react-auth0-spa";
 
 // react-bootstrap css (required)
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const { loading } = useAuth0();
@@ -23,30 +22,13 @@ function App() {
     <div className="App">
       <header>
         <Router>
-          <Nav />
-          {/* <NavBar /> */}
-          {/* <IndexHeader /> */}
+          <Navigation />
           <Route exact path="/" component={Search} />
+          <Route exact path="/saved" component={Saved} />
         </Router>
-
-
       </header>
     </div>
   );
 }
-
-
-
-// function App() {
-//   return (
-//     <Router>
-//     <div>
-//       <Nav />
-//       <Route exact path="/" component={Search} />
-//       <Route exact path="/Login" component={Login} />
-//     </div>
-//   </Router>
-//   );
-// }
 
 export default App;
