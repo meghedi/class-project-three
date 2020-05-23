@@ -34,7 +34,7 @@ function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
             src={image}
             className="card-img-top img-thumbnail"
             top
-            // style={{ width: "320px", height: "320px" }}
+            style={{height:"50%", margin: "auto"}}
           ></CardImg>
 
           <CardBody style={{ position: "relative" }}>
