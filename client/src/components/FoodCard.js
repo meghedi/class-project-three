@@ -50,7 +50,6 @@ function FoodCard(props) {
                     </CardText>
                   </CardBody>
                 </Card>
-
               ))}
             </Col>
             <hr />

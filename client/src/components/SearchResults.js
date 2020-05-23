@@ -4,7 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 
 function SearchResults(props) {
   return (
-    <Container>
+    <Container className="mt-5">
         <Row>
           <Col className="ml-auto mr-auto" md="12">
             {props.results.map((result) => (
