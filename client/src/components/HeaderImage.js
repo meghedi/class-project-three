@@ -6,8 +6,9 @@ import Background from "../assets/img/yellowBackground.png";
 var sectionStyle = {
     width: "100%",
     height: "450px",
-    backgroundPosition: 'center',
-    backgroundImage: `url(${Background})`
+    backgroundPosition: 'right',
+    backgroundImage: `url(${Background})`,
+    backgroundSize:'cover'
 };
 
 class HeaderImage extends Component {
