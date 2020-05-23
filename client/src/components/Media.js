@@ -1,4 +1,10 @@
 import React from "react";
+import{
+  Card,
+  CardImg,
+  CardBody,
+  CardText
+} from "reactstrap";
 
 const styles = {
   buttonStyle: {
@@ -10,23 +16,29 @@ const styles = {
     position: "relative",
   },
 };
-function Media({restaurant, cuisines,rating, image, link, handleSave}) {
+function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
   return (
-    <div className="media">
-      <img className="mr-3" src={image} alt={restaurant} />
-      <div className="media-body">
-        <h5 className="mt-0"><a href={link} target="_blank">{restaurant}</a></h5>
+    <>
+      <div className="section">
+              <Card style={{ width: "20rem" }}>
+                <CardImg alt={restaurant} src={image} top></CardImg>
+                <CardBody style={{ position: "relative" }}>
+                  <CardText>
+                    <b>{restaurant}</b>
+                  </CardText>
+                  <button
+                    type="button"
+                    id="btnSave"
+                    style={styles.buttonStyle}
+                    className="btn btn-default"
+                    onClick={handleSave}
+                  >
+                    Save
+                  </button>
+                </CardBody>
+              </Card>
       </div>
-      <button
-        type="button"
-        id="btnSave"
-        style={styles.buttonStyle}
-        className="btn btn-default"
-        onClick={handleSave}
-      >
-        Save
-      </button>
-    </div>
+    </>
   );
 }
 

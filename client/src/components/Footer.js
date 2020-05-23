@@ -29,7 +29,7 @@ function DefaultFooter() {
           © {new Date().getFullYear()}, Designed and coded {" "}
           <a
             href="https://github.com/meghedi/class-project-three"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer" 
           >
             Meghedi Hacopi, Kelli , Randy Amos & Americ Ngwije
           </a>
