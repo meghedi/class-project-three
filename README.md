@@ -1,29 +1,42 @@
-# Create React Express App
+# Five Star Foodies - A Personal Search Food App
 
-## About This Boilerplate
+Five Star Foodies allows the user to search for their favorite foods utilizing Yelp API to return a listing of restaurants meeting the user's preferences. Users can save their searches on their own Favorite Search Page. Onced saved, the favorites can be printed, emailed or shared via Twitter.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Features
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+- User filtering (i.e., user able to customize their food and restaurant searches.) 
 
-## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Installing
 
-```
-npm install
-```
+Git clone the repo ()
 
-This should install node modules within the server and the client folder.
+Navigate to server.js folder and "npm install" to install the required dependencies.
 
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+Navigate to root directory and "npm start" to start client.
 
 ## Deployment (Heroku)
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+You can see a deployed version ()
+
+## Built With
+
+- React
+- Node.js
+- Javascript
+- MongoDB/Mongoose
+- Yelp API
+- Express (MERN stack)
+- Bootstrap
+- AuthO
+- Unsplash for Free Food photos: https://unsplash.com/developers
+
+## Authors
+- Americ Ngwije
+- Meghedi Hacopi
+- Kelli Uyeda
+- Randy Amos
+
+
+
+
