@@ -18,9 +18,9 @@ function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
           <CardImg
             alt={restaurant}
             src={image}
-            style={{ width: "80%", margin: "auto" }}
+            style={{ width: "50%", margin: "auto" }}
             top
-          ></CardImg>
+            ></CardImg>
 
           <CardBody style={{ position: "relative" }}>
 
