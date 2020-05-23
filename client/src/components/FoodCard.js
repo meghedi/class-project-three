@@ -1,113 +1,109 @@
 import React from "react";
-// reactstrap components
-import{
+import {
   Card,
   CardImg,
   CardBody,
   CardText,
   Container,
   Row,
-      Col
+  Col,
 } from "reactstrap";
-// core components
 
-function Example(){
+const buttonStyle={
+  button:{
+    cursor: "pointer",
+    border:"none",
+    backgroundColor:"transparent"
+  }
+}
+
+function FoodCard(props) {
+  const searchItem = [
+    { term: "sushi", location: "Los Angeles, CA", rating: "5", limit: 5, id:"F1" },
+    { term: "tacos", location: "Los Angeles, CA", rating: "5", limit: 5 , id:"F"},
+    { term: "burger", location: "Los Angeles, CA", rating: "5", limit: 5 , id:"F3"},
+    { term: "indian", location: "Los Angeles, CA", rating: "5", limit: 5 , id:"F4"},
+    { term: "pho", location: "Los Angeles, CA", rating: "5", limit: 5 , id:"F5"},
+    { term: "icecream", location: "Los Angeles, CA", rating: "5", limit: 5, id:"F6" },
+  ];
   return (
     <>
-              <div className="section">
-              <Container>
-              <Row>
-              <Col className="ml-auto mr-auto" md="4">
-      <Card style={{ width: "20rem" }}>
-        <CardImg
-          alt="..."
-          src={require("../assets/img/sushi.jpg")}
-          top
-        ></CardImg>
-        <CardBody>
-          <CardText>
-          <b>Sushi</b> 
-          </CardText>
-        </CardBody>
-      </Card>
-      <hr/>
-      <Card style={{ width: "20rem" }}>
-        <CardImg
-          alt="..."
-          src={require("../assets/img/tacos.jpg")}
-          top
-        ></CardImg>
-        <CardBody>
-          <CardText>
-          <b>Tacos</b> 
-          </CardText>
-        </CardBody>
-      </Card>
-      </Col>
-      <hr/>
-      <Col className="ml-auto mr-auto" md="4">
-      <Card style={{ width: "20rem" }}>
-        <CardImg
-          alt="..."
-          src={require("../assets/img/burger.jpg")}
-          top
-        ></CardImg>
-        <CardBody>
-          <CardText>
-          <b>Burgers</b> 
-          </CardText>
-        </CardBody>
-      </Card>
-      <hr/>
-      <Card style={{ width: "20rem" }}>
-        <CardImg
-          alt="..."
-          src={require("../assets/img/indian.jpg")}
-          top
-        ></CardImg>
-        <CardBody>
-          <CardText>
-          <b>Indian</b> 
-          </CardText>
-        </CardBody>
-      </Card>
-      <hr/>
-      </Col>
-      <Col className="ml-auto mr-auto" md="4">
-      <Card style={{ width: "20rem" }}>
-        <CardImg
-          alt="..."
-          src={require("../assets/img/pho.jpg")}
-          top
-        ></CardImg>
-        <CardBody>
-          <CardText>
-          <b>Pho</b> 
-          </CardText>
-        </CardBody>
-      </Card>
-      <hr/>
-      <Card style={{ width: "20rem" }}>
-        <CardImg
-          alt="..."
-          src={require("../assets/img/icecream.jpg")}
-          top
-        ></CardImg>
-        <CardBody>
-          <CardText>
-          <b>Ice Cream</b> 
-          </CardText>
-        </CardBody>
-      </Card>
-  
-      
-      </Col>
-      </Row>
+      <div className="section">
+        <Container>
+          <Row>
+            <Col className="ml-auto mr-auto" md="4">
+              {searchItem.slice(0, 2).map((item) => (
+                <Card style={{ width: "20rem" }} key={item.id}>
+                  <CardImg
+                    alt="..."
+                    src={require(`../assets/img/${item.term}.jpg`)}
+                    top
+                  ></CardImg>
+                  <CardBody>
+                    <CardText>
+                      <button
+                        onClick={() => props.handleSelect(item)}
+                        style={buttonStyle.button}
+                      >
+                        <b>{item.term.toUpperCase()}</b>
+                      </button>
+                    </CardText>
+                  </CardBody>
+                </Card>
 
+              ))}
+            </Col>
+            <hr />
+            <Col className="ml-auto mr-auto" md="4">
+              {searchItem.slice(2, 4).map((item) => (
+                  <Card style={{ width: "20rem" }} key={item.id}>
+                    <CardImg
+                      alt="..."
+                      src={require(`../assets/img/${item.term}.jpg`)}
+                      top
+                    ></CardImg>
+                    <CardBody>
+                      <CardText>
+                        <button
+                          onClick={() => props.handleSelect(item)}
+                          style={buttonStyle.button}
+                        >
+                          <b>{item.term.toUpperCase()}</b>
+                        </button>
+                      </CardText>
+                    </CardBody>
+                  </Card>
+              ))}
+            </Col>
+            <hr />
+            <Col className="ml-auto mr-auto" md="4">
+              {searchItem.slice(4, 6).map((item) => (
+                  <Card style={{ width: "20rem" }} key={item.id}>
+                    <CardImg
+                      alt="..."
+                      src={require(`../assets/img/${item.term}.jpg`)}
+                      top
+                    ></CardImg>
+                    <CardBody>
+                      <CardText>
+                        <button
+                          onClick={() => props.handleSelect(item)}
+                          style={buttonStyle.button}
+                        >
+                          <b>{item.term.toUpperCase()}</b>
+                        </button>
+                      </CardText>
+                    </CardBody>
+                  </Card>
+
+              ))}
+            </Col>
+            <hr />
+          </Row>
         </Container>
       </div>
     </>
   );
 }
 
-export default Example
+export default FoodCard;

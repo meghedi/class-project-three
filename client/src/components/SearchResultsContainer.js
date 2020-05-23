@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
 import API from "../utils/API";
+import FoodCard from "./FoodCard";
+
 
 function SearchResultContainer() {
   const [searchState, setSearchState] = useState("");
+  const [locationState, setLocationState] = useState("Los Angeles, CA");
+
   const [resultState, setResultState] = useState([]);
 
   let searcbyFood = (query) => {
@@ -28,7 +32,7 @@ function SearchResultContainer() {
     e.preventDefault();
     const searchRequest = {
       term: searchState,
-      location: "91206",
+      location: locationState,
       rating: "5",
       limit: 5
     };
@@ -37,6 +41,7 @@ function SearchResultContainer() {
 
   const handleInputChange = event => {
     setSearchState(event.target.value);
+    setLocationState(event.target.value);
   };
 
   const handleSave = searchData =>{
@@ -50,6 +55,7 @@ function SearchResultContainer() {
   return (
     <div>
       <SearchForm search={searchState} handleFormSubmit={handleFormSubmit} handleInputChange={handleInputChange} handleKeyPress={keyPressed}/>
+      <FoodCard handleSelect={searcbyFood} />
       <SearchResults results={resultState} handleSave={handleSave} />
     </div>
   );

@@ -4,18 +4,20 @@ import HeaderImage from "./HeaderImage";
 
 
 function Wrapper(props) {
-   return (
-      <div className="container">
+  return (
+    <div
+      className="container-fluid"
+      style={{ paddingLeft: 0, paddingRight: 0 }}
+    >
+      <HeaderImage />
 
-<HeaderImage/>
-         
-         <h1 className="display-4">Dining out is better when you share!! </h1>
-         <p className="lead">Search for your favorite foods and best restaurants</p>
+      <h1 className="display-4">Dining out is better when you share!! </h1>
+      <p className="lead">
+        Search for your favorite foods and best restaurants
+      </p>
 
-         <div>
-            {props.children}
-         </div>
-      </div>
-   );
+      <div>{props.children}</div>
+    </div>
+  );
 }
 export default Wrapper;
