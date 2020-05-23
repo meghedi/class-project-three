@@ -9,6 +9,14 @@ import {
   Col,
 } from "reactstrap";
 
+const buttonStyle={
+  button:{
+    cursor: "pointer",
+    border:"none",
+    backgroundColor:"transparent"
+  }
+}
+
 function FoodCard(props) {
   const searchItem = [
     { term: "sushi", location: "91206", rating: "5", limit: 5 },
@@ -16,7 +24,7 @@ function FoodCard(props) {
     { term: "burger", location: "91206", rating: "5", limit: 5 },
     { term: "indian", location: "91206", rating: "5", limit: 5 },
     { term: "pho", location: "91206", rating: "5", limit: 5 },
-    { term: "ice cream", location: "91206", rating: "5", limit: 5 },
+    { term: "icecream", location: "91206", rating: "5", limit: 5 },
   ];
   return (
     <>
@@ -25,23 +33,26 @@ function FoodCard(props) {
           <Row>
             <Col className="ml-auto mr-auto" md="4">
               {searchItem.slice(0, 2).map((item) => (
+                <>
                 <Card style={{ width: "20rem" }}>
                   <CardImg
                     alt="..."
-                    src={require("../assets/img/sushi.jpg")}
+                    src={require(`../assets/img/${item.term}.jpg`)}
                     top
                   ></CardImg>
                   <CardBody>
                     <CardText>
                       <button
                         onClick={() => props.handleSelect(item)}
-                        style={{ cursor: "pointer" }}
+                        style={buttonStyle.button}
                       >
-                        <b>{item.term}</b>
+                        <b>{item.term.toUpperCase()}</b>
                       </button>
                     </CardText>
                   </CardBody>
                 </Card>
+                <hr/>
+                </>
               ))}
             </Col>
             <hr />
@@ -51,16 +62,16 @@ function FoodCard(props) {
                   <Card style={{ width: "20rem" }}>
                     <CardImg
                       alt="..."
-                      src={require("../assets/img/pho.jpg")}
+                      src={require(`../assets/img/${item.term}.jpg`)}
                       top
                     ></CardImg>
                     <CardBody>
                       <CardText>
                         <button
                           onClick={() => props.handleSelect(item)}
-                          style={{ cursor: "pointer" }}
+                          style={buttonStyle.button}
                         >
-                          <b>{item.term}</b>
+                          <b>{item.term.toUpperCase()}</b>
                         </button>
                       </CardText>
                     </CardBody>
@@ -76,16 +87,16 @@ function FoodCard(props) {
                   <Card style={{ width: "20rem" }}>
                     <CardImg
                       alt="..."
-                      src={require("../assets/img/sushi.jpg")}
+                      src={require(`../assets/img/${item.term}.jpg`)}
                       top
                     ></CardImg>
                     <CardBody>
                       <CardText>
                         <button
                           onClick={() => props.handleSelect(item)}
-                          style={{ cursor: "pointer" }}
+                          style={buttonStyle.button}
                         >
-                          <b>{item.term}</b>
+                          <b>{item.term.toUpperCase()}</b>
                         </button>
                       </CardText>
                     </CardBody>

@@ -7,7 +7,7 @@ function SearchResults(props) {
     <Container>
       {props.results.length ? (
         <Row>
-          <Col className="ml-auto mr-auto" md="4">
+          <Col className="ml-auto mr-auto" md="12">
             {props.results.map((result) => (
               <Media
                 restaurant={result.name}

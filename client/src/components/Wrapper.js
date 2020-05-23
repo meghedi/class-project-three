@@ -4,7 +4,7 @@ import HeaderImage from "./HeaderImage";
 
 function Wrapper(props) {
    return (
-      <div className="container">
+      <div className="container-fluid">
 
 <HeaderImage/>
          

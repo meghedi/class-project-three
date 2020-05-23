@@ -20,8 +20,8 @@ function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
   return (
     <>
       <div className="section">
-              <Card style={{ width: "20rem" }}>
-                <CardImg alt={restaurant} src={image} top></CardImg>
+              <Card style={{ width: "40rem" }}>
+                <CardImg alt={restaurant} src={image} top style={{width:"320px", height:"320px"}}></CardImg>
                 <CardBody style={{ position: "relative" }}>
                   <CardText>
                     <b>{restaurant}</b>
