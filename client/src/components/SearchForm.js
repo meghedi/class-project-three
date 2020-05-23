@@ -1,10 +1,13 @@
 import React from "react";
+import { Row } from "reactstrap";
+
 
 function SearchForm(props) {
     return (
       <form>
-        <div className="form-group">
-          <label htmlFor="search">Search:</label>
+        <div className="form-group" style={{margin: "20px auto", maxWidth:"600px", marginBottom:"40px"}}>
+         <Row>
+         <div className="col"  style={{paddingRight:"5px"}}>
           <input
             name="search"
             type="text"
@@ -14,10 +17,23 @@ function SearchForm(props) {
             onChange={props.handleInputChange}
             onKeyPress = {props.handleKeyPress}
           />
-          
-          <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+          </div>
+          <div className="col" style={{paddingLeft:"5px"}}>
+          <input
+            name="location"
+            type="text"
+            className="form-control"
+            placeholder="Los Angeles, CA"
+            id="location"
+            onChange={props.handleInputChange}
+          />
+         </div>
+         <div>
+          <button onClick={props.handleFormSubmit} className="btn btn-primary">
             Search
           </button>
+ </div>
+ </Row>
         </div>
       </form>
     );

@@ -5,11 +5,11 @@ import { Container, Row, Col } from "reactstrap";
 function SearchResults(props) {
   return (
     <Container>
-      {props.results.length ? (
         <Row>
           <Col className="ml-auto mr-auto" md="12">
             {props.results.map((result) => (
               <Media
+                key={result.id}
                 restaurant={result.name}
                 image={result.image_url}
                 cuisines={result.categories}
@@ -26,9 +26,6 @@ function SearchResults(props) {
             ))}
           </Col>
         </Row>
-      ) : (
-        <h3>No Results to Display</h3>
-      )}
     </Container>
   );
 }
