@@ -13,13 +13,19 @@ function SearchResults(props) {
                 restaurant={result.name}
                 image={result.image_url}
                 cuisines={result.categories}
-                link={result.link}
+                address={result.location.display_address}
+                phone={result.display_phone}
+                phone={result.phone}
+                link={result.url}
                 handleSave={() =>
                   props.handleSave({
                     restaurant: result.name,
                     cuisines: result.categories,
+                    address:result.location.display_address,
+                    phone:result.phone,
+                    rating:result.rating,
                     image: result.image_url,
-                    link: result.link,
+                    link: result.url
                   })
                 }
               />

@@ -1,39 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  Card,
+  CardImg,
+  CardTitle,
+  CardBody,
+  CardLink} from "reactstrap";
 
-const styles = {
-  buttonStyle: {
-    position: "absolute",
-    top: 5,
-    right: 5,
-  },
-  mediaStyle: {
-    position: "relative",
-  },
-
-  buttonStyle2: {
-    position: "absolute",
-    top: 8,
-    right: 90,
-    color:"#333"
-  },
-};
-function SavedMedia({id, title, imgsrc, previewLink, handleDeleteRestuarant}) {
+function SavedMedia({id, title, imgsrc, cuisines, previewLink, location, rating, phone, handleDeleteRestuarant}) {
   return (
-    <div className="media">
-      <img className="mr-3" src={imgsrc} alt={title} />
-      <div className="media-body">
-        <h5 className="mt-0"><a href={previewLink} target="_blank" rel="noopener noreferrer">{title}</a></h5>
-      </div>
-      {window.location.pathname === "/saved" ? (
+    <>
+      <div className="section">
+        <Card className="mb-3" body outline color="primary">
+          <CardTitle>
+            <h1>{title}</h1>
+          </CardTitle>
+          <CardImg
+            alt={title}
+            src={imgsrc}
+            style={{ width: "50%", margin: "auto" }}
+            top
+            ></CardImg>
+
+          <CardBody style={{ position: "relative" }}>
+
+              <ul className="list-group list-group-flush center">
+                <li className="list-group-item">Rating: {rating}</li>
+                <li className="list-group-item">Cuisines: 
+             
+                </li>
+                <li className="list-group-item">Phone: <a href={`tel:${phone}`}>{phone}</a></li>
+                <li className="list-group-item">Address : {location}</li>
+                <a href={previewLink} className="list-group-item list-group-item-action">
+                  Yelp Listing
+                </a>
+              </ul>
+              {window.location.pathname === "/saved" ? (
             <div>
-            <Link to={"/restaurants/"+ id} className="btn btn-default" style={styles.buttonStyle2} >
-            View
-            </Link>
             <button
             type="button"
             id="btnDelete"
-            style={styles.buttonStyle}
             className="btn btn-danger"
             onClick={()=>handleDeleteRestuarant(id)}
             >
@@ -43,7 +49,10 @@ function SavedMedia({id, title, imgsrc, previewLink, handleDeleteRestuarant}) {
       ):(
          <p></p>
       )}
-    </div>
+          </CardBody>
+        </Card>
+      </div>
+    </>
   );
 }
 

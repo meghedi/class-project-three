@@ -5,6 +5,7 @@ const restaurantSchema = new Schema({
   cuisines: { type: [], required: true },
   rating: {type: Number},
   location: String,
+  phone: String,
   image : String,
   link: String
 });

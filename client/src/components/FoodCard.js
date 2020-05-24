@@ -33,7 +33,7 @@ function FoodCard(props) {
           <Row>
             <Col className="ml-auto mr-auto" md="4">
               {searchItem.slice(0, 2).map((item) => (
-                <Card style={{ width: "20rem" }} key={item.id}>
+                <Card style={{ width: "20rem",marginBottom: "10px" }} key={item.id}>
                   <CardImg
                     alt="..."
                     src={require(`../assets/img/${item.term}.jpg`)}
@@ -55,7 +55,7 @@ function FoodCard(props) {
             <hr />
             <Col className="ml-auto mr-auto" md="4">
               {searchItem.slice(2, 4).map((item) => (
-                  <Card style={{ width: "20rem" }} key={item.id}>
+                  <Card style={{ width: "20rem",marginBottom: "10px" }} key={item.id}>
                     <CardImg
                       alt="..."
                       src={require(`../assets/img/${item.term}.jpg`)}
@@ -77,7 +77,7 @@ function FoodCard(props) {
             <hr />
             <Col className="ml-auto mr-auto" md="4">
               {searchItem.slice(4, 6).map((item) => (
-                  <Card style={{ width: "20rem" }} key={item.id}>
+                  <Card style={{ width: "20rem",marginBottom: "10px" }} key={item.id}>
                     <CardImg
                       alt="..."
                       src={require(`../assets/img/${item.term}.jpg`)}

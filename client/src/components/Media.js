@@ -6,8 +6,7 @@ import {
   CardBody,
   CardLink} from "reactstrap";
 
-
-function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
+function Media({ restaurant, cuisines, rating, image, link, address, phone, displayPhone, handleSave }) {
   return (
     <>
       <div className="section">
@@ -25,11 +24,15 @@ function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
           <CardBody style={{ position: "relative" }}>
 
               <ul className="list-group list-group-flush center">
-                <li className="list-group-item">Rating:</li>
-                <li className="list-group-item">Cuisines:</li>
-                <li className="list-group-item">Phone:</li>
-                <li className="list-group-item">Address</li>
-                <a href="{link}" className="list-group-item list-group-item-action">
+                <li className="list-group-item">Rating: {rating}</li>
+                <li className="list-group-item">Cuisines: 
+                {cuisines.map((category)=>(
+                   <span key={category.alias}>{category.title}, </span>
+                ))}
+                </li>
+                <li className="list-group-item">Phone: <a href={`tel:${phone}`}>{displayPhone}</a></li>
+                <li className="list-group-item">Address : {address}</li>
+                <a href={link} className="list-group-item list-group-item-action">
                   Yelp Listing
                 </a>
               </ul>
@@ -42,7 +45,6 @@ function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
                 Save
               </button>
 
-            <CardLink href="#">{link}</CardLink>
           </CardBody>
         </Card>
       </div>

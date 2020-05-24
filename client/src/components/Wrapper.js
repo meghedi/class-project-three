@@ -11,7 +11,7 @@ function Wrapper(props) {
     >
       <HeaderImage />
 
-      <h1 className="display-4">Dining out is better when you share!! </h1>
+      <h1 className="display-4 mt-5">Dining out is better when you share!! </h1>
       <p className="lead">
         Search for your favorite foods and best restaurants
       </p>

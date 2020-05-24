@@ -33,9 +33,13 @@ useEffect(() => {
           <li className="list-group-item mb-3" key={item._id}>
             <SavedMedia
               title={item.restaurant}
-              imgsrc={item.image} 
+              imgsrc={item.image}
+              rating={item.rating} 
+              location={item.location}
+              phone={item.phone}
               previewLink = {item.link}
-              handledeleteRestaurant={deleteRestaurant} 
+              cuisines ={item.categories}
+              handleDeleteRestuarant={deleteRestaurant} 
               id={item._id} />
           </li>
         ))}
