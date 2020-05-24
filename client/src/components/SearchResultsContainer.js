@@ -45,6 +45,7 @@ function SearchResultContainer() {
   };
 
   const handleSave = searchData =>{
+    console.log(searchData);
     saveRestaurant(searchData);
   }
 

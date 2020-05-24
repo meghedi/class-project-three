@@ -4,27 +4,12 @@ import {
   CardImg,
   CardTitle,
   CardBody,
-  CardLink,
-  CardText,
-  Row,
-  Col,
-} from "reactstrap";
+  CardLink} from "reactstrap";
 
-// const styles = {
-//   buttonStyle: {
-//     position: "absolute",
-//     top: 5,
-//     right: 5,
-//   },
-//   mediaStyle: {
-//     position: "relative",
-//   },
-// };
-function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
+function Media({ restaurant, cuisines, rating, image, link, address, phone, displayPhone, handleSave }) {
   return (
     <>
       <div className="section">
-        {/* <Card style={{ width: "40rem" }}> */}
         <Card className="mb-3" body outline color="primary">
           <CardTitle>
             <h1>{restaurant}</h1>
@@ -32,37 +17,36 @@ function Media({ restaurant, cuisines, rating, image, link, handleSave }) {
           <CardImg
             alt={restaurant}
             src={image}
-            className="card-img-top img-thumbnail"
+            style={{ width: "50%", margin: "auto" }}
             top
-            style={{height:"50%", margin: "auto"}}
-          ></CardImg>
+            ></CardImg>
 
           <CardBody style={{ position: "relative" }}>
-            <CardText>
-              <ul class="list-group list-group-flush center">
-                <li class="list-group-item">Rating:</li>
-                <li class="list-group-item">Cuisines:</li>
-                <li class="list-group-item">Phone:</li>
-                <li class="list-group-item">Address</li>
-                <a href="{link}" class="list-group-item list-group-item-action">
+
+              <ul className="list-group list-group-flush center">
+                <li className="list-group-item">Rating: {rating}</li>
+                <li className="list-group-item">Cuisines: 
+                {cuisines.map((category)=>(
+                   <span key={category.alias}>{category.title}, </span>
+                ))}
+                </li>
+                <li className="list-group-item">Phone: <a href={`tel:${phone}`}>{displayPhone}</a></li>
+                <li className="list-group-item">Address : {address}</li>
+                <a href={link} className="list-group-item list-group-item-action">
                   Yelp Listing
                 </a>
               </ul>
               <button
-              type="button"
-              id="btnSave"
-              // style={styles.buttonStyle}
-              className="btn btn-primary btn-lg active"
-              onClick={handleSave}
-            >
-              Save
-            </button>
-            </CardText>
-            <CardLink href="#">{link}</CardLink>
+                type="button"
+                id="btnSave"
+                className="btn btn-primary btn-lg active"
+                onClick={handleSave}
+              >
+                Save
+              </button>
+
           </CardBody>
-
         </Card>
-
       </div>
     </>
   );
