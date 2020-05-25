@@ -4,12 +4,17 @@ import Search from "./components/pages/Search";
 import Saved from "./components/pages/Saved";
 import Navigation from "./components/Navigation";
 import "./App.css";
-// import IndexHeader from './components/Headers/IndexHeader';
-
-import { useAuth0 } from "./react-auth0-spa";
 
 // react-bootstrap css (required)
 import "bootstrap/dist/css/bootstrap.min.css";
+
+const {
+  isLoading,
+  user,
+  loginWithRedirect,
+  logout,
+  getTokenSilently,
+} = useContext(auth0Context);
 
 function App() {
   const { loading } = useAuth0();

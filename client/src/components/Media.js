@@ -3,8 +3,7 @@ import {
   Card,
   CardImg,
   CardTitle,
-  CardBody,
-  CardLink} from "reactstrap";
+  CardBody} from "reactstrap";
 
 function Media({ restaurant, cuisines, rating, image, link, address, phone, displayPhone, handleSave }) {
   return (

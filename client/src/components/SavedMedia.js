@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Card,
   CardImg,
   CardTitle,
-  CardBody,
-  CardLink} from "reactstrap";
+  CardBody} from "reactstrap";
 
 function SavedMedia({id, title, imgsrc, cuisines, previewLink, location, rating, phone, handleDeleteRestuarant}) {
   return (
