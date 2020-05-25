@@ -4,13 +4,13 @@ import {
   CardImg,
   CardTitle,
   CardBody,
-  CardLink} from "reactstrap";
+  } from "reactstrap";
 
 function Media({ restaurant, cuisines, rating, image, link, address, phone, displayPhone, handleSave }) {
   return (
     <>
       <div className="section">
-        <Card className="mb-3" body outline color="primary">
+        <Card className="mb-3" body outline color="danger">
           <CardTitle>
             <h1>{restaurant}</h1>
           </CardTitle>
@@ -21,9 +21,9 @@ function Media({ restaurant, cuisines, rating, image, link, address, phone, disp
             top
             ></CardImg>
 
-          <CardBody style={{ position: "relative" }}>
-
-              <ul className="list-group list-group-flush center">
+          <CardBody>
+    
+              <ul className="list-group list-group-flush left">
                 <li className="list-group-item">Rating: {rating}</li>
                 <li className="list-group-item">Cuisines: 
                 {cuisines.map((category)=>(
@@ -32,14 +32,14 @@ function Media({ restaurant, cuisines, rating, image, link, address, phone, disp
                 </li>
                 <li className="list-group-item">Phone: <a href={`tel:${phone}`}>{displayPhone}</a></li>
                 <li className="list-group-item">Address : {address}</li>
-                <a href={link} className="list-group-item list-group-item-action">
+                <a href={link} className="list-group-item list-group-item-action text-danger fab fa-yelp">
                   Yelp Listing
                 </a>
               </ul>
               <button
                 type="button"
                 id="btnSave"
-                className="btn btn-primary btn-lg active"
+                className="btn btn-danger btn-lg active"
                 onClick={handleSave}
               >
                 Save
