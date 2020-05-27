@@ -4,7 +4,7 @@ const apiKey = process.env.REACT_APP_API_KEY;
 export default {
   search: function (searchRequest) {
     return axios.get(
-      `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search`,
+      `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?categories=restaurants,All`,
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,
