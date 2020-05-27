@@ -16,9 +16,9 @@ export class Auth0Provider extends Component {
   };
 
   config = {
-    domain: "dev-355h9n9j.auth0.com",
-    client_id: "c0glh0W4LFsCL4lht7YqKdpZHbI06wYg",
-    audience: "https://dailyplanner/api",
+    domain: "uclaprojectthree.auth0.com",
+    client_id: "pJVE5oDnGK6GRx50eY4SS3PNPQwNEsYA",
+    audience: "https://fivestarapi/api",
     redirect_uri: "http://localhost:3000/",
   };
 

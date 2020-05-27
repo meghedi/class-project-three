@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { auth0Context } from "../contexts/Auth0Context";
+
 import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
 import API from "../utils/API";
@@ -6,6 +8,15 @@ import FoodCard from "./FoodCard";
 
 
 function SearchResultContainer() {
+
+  const {
+    isLoading,
+    user,
+    loginWithRedirect,
+    logout,
+    getTokenSilently,
+  } = useContext(auth0Context);
+
   const [searchState, setSearchState] = useState("");
   const [locationState, setLocationState] = useState("Los Angeles, CA");
 
@@ -22,10 +33,10 @@ function SearchResultContainer() {
     });
   };
 
-  const saveRestaurant = searchData => {
-    console.log(searchData);
-    API.saveRestaurant(searchData).then((res)=>console.log(res)
-     ).catch(err => console.log(err));
+  const saveRestaurant = async searchData => {
+    let token = await getTokenSilently();
+    
+    API.saveRestaurant(searchData, token).then((res)=>console.log(res)).catch(err => console.log(err));
   }
 
   function handleFormSubmit(e) {
@@ -45,7 +56,6 @@ function SearchResultContainer() {
   };
 
   const handleSave = searchData =>{
-    console.log(searchData);
     saveRestaurant(searchData);
   }
 
