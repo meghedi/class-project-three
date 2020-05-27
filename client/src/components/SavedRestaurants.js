@@ -1,18 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
 import SavedMedia from "./SavedMedia";
+import { auth0Context } from "../contexts/Auth0Context";
+
 
 function SavedRestaurants() {
+
+  const {
+    isLoading,
+    user,
+    loginWithRedirect,
+    logout,
+    getTokenSilently,
+  } = useContext(auth0Context);
+
+
   const [restaurantState, setRestaurantState] = useState([]);
 
 useEffect(() => {
-    loadRestaurants();
-}, []);
+  if(!isLoading) loadRestaurants();
+}, [getTokenSilently]);
 
  function loadRestaurants(){
+
   const fetchData = async () => {
-    const result = await API.getRestaurants();
-    setRestaurantState([...result.data]);
+    let token = await getTokenSilently();
+
+   const result =  await API.getRestaurants(user.sub,token);
+   setRestaurantState([...result.data]);
   };
 
   fetchData();

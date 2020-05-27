@@ -2,8 +2,8 @@ import axios from "axios";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 export default {
-  search: function (searchRequest) {
-    return axios.get(
+  search: async function (searchRequest) {
+    return await axios.get(
       `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?categories=restaurants,All`,
       {
         headers: {
@@ -17,12 +17,20 @@ export default {
     );
   },
   // Gets all books
-  getRestaurants: function () {
-    return axios.get("/api/restaurants");
+  getRestaurants: function (user,token) {
+    return axios.get("/api/restaurants/?user=" + user, {
+      headers: {
+         Authorization: `Bearer ${token}`,
+      },
+       });
   },
   // Gets the book with the given id
-  getRestaurant: function (id) {
-    return axios.get("/api/restaurants/" + id);
+  getRestaurant: function (id, token) {
+    return axios.get("/api/restaurants/" + id, {
+      headers: {
+         Authorization: `Bearer ${token}`,
+      },
+       });
   },
   // Deletes the book with the given id
   deleteRestaurant: function (id) {
