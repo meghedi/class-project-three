@@ -34,8 +34,10 @@ const checkJwt = jwt({
 // Matches with "/api/restaurants"
 
 router.route("/").all(checkJwt)
-  .get(restaurantsController.findAll)
   .post(restaurantsController.create);
+
+  router.route("/").all(checkJwt)
+  .get(restaurantsController.findAll)
 
 // Matches with "/api/restaurants/:id"
 router

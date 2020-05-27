@@ -10,10 +10,6 @@ import FoodCard from "./FoodCard";
 function SearchResultContainer() {
 
   const {
-    isLoading,
-    user,
-    loginWithRedirect,
-    logout,
     getTokenSilently,
   } = useContext(auth0Context);
 

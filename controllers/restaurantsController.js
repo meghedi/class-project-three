@@ -3,9 +3,10 @@ const db = require("../models");
 // Defining methods for the restaurantsController
 module.exports = {
   findAll: function(req, res) {
+    console.log(req.query);
     db.restaurant
       .find(req.query)
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => {res.json(dbModel);     console.log(req.user);      })
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
