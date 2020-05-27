@@ -29,8 +29,13 @@ export default {
     return axios.delete("/api/restaurants/" + id);
   },
   // Saves a book to the database
-  saveRestaurant: function (searchData) {
-    return axios.post("/api/restaurants", searchData);
+  saveRestaurant: function (searchData, token) {
+    console.log(token);
+    return axios.post("/api/restaurants", searchData, {
+     headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   },
   saveUser: function (userData) {
     return axios.post("/api/users", userData);

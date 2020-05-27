@@ -11,14 +11,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function App() {
-
-
-
   return (
     <div className="App">
       <header>
+        <Navigation />
         <Router>
-          <Navigation />
           <Route exact path="/" component={Search} />
           <Route exact path="/saved" component={Saved} />
         </Router>
