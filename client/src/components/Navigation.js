@@ -11,7 +11,9 @@ function Navigation() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
-          <Nav.Link href="/saved">Favorites</Nav.Link>
+        {isAuthenticated && (
+          <Nav.Link href="/saved" >Favorites</Nav.Link>
+        )}
           {!isAuthenticated && (
             <Nav.Link eventKey={2} onClick={() => loginWithRedirect({})}>
               Login

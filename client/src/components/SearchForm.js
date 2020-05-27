@@ -7,7 +7,7 @@ function SearchForm(props) {
       <form>
         <div className="form-group" style={{margin: "20px auto", maxWidth:"600px", marginBottom:"40px"}}>
          <Row>
-         <div className="col"  style={{paddingRight:"5px"}}>
+         <div className="col ml-auto mr-auto"  style={{paddingRight:"5px"}}>
           <input
             name="search"
             type="text"
@@ -18,7 +18,7 @@ function SearchForm(props) {
             onKeyPress = {props.handleKeyPress}
           />
           </div>
-          <div className="col" style={{paddingLeft:"5px"}}>
+          <div className="col ml-auto mr-auto" style={{paddingLeft:"5px"}} md="4">
           <input
             name="location"
             type="text"

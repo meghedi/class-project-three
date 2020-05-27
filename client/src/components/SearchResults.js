@@ -14,7 +14,7 @@ function SearchResults(props) {
                 image={result.image_url}
                 cuisines={result.categories}
                 address={result.location.display_address}
-                phone={result.display_phone}
+                displayPhone={result.display_phone}
                 phone={result.phone}
                 link={result.url}
                 handleSave={() =>

@@ -11,8 +11,8 @@ function Wrapper(props) {
     >
       <HeaderImage />
 
-      <h1 className= "display-4 mt-5"style= {{color: "black"},  {fontFamily: "Sofia"}}>Dining out is better when you share! </h1>
-      <p className="lead" style= {{color: "black"},  {fontFamily: "Sofia"}} >
+      <h1 className= "display-4 mt-5" style= {{color: "black" , fontFamily: "Sofia"}}>Dining out is better when you share! </h1>
+      <p className="lead" style= {{color: "black", fontFamily: "Sofia"}} >
         Search for your favorite foods and best restaurants
       </p>
 

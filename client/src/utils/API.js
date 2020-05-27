@@ -32,4 +32,7 @@ export default {
   saveRestaurant: function (searchData) {
     return axios.post("/api/restaurants", searchData);
   },
+  saveUser: function (userData) {
+    return axios.post("/api/users", userData);
+  },
 };
