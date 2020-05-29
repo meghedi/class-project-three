@@ -30,6 +30,7 @@ function SearchResults(props) {
                     loginWithRedirect({});
                   }else{
                   props.handleSave({
+                    restaurantId: result.id,
                     restaurant: result.name,
                     cuisines: result.categories,
                     location:result.location.display_address.join(", "),
@@ -37,7 +38,7 @@ function SearchResults(props) {
                     rating:result.rating,
                     image: result.image_url,
                     link: result.url
-                  })
+                  }, result.id)
                 }
               }
                 }

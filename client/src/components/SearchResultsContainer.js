@@ -10,11 +10,13 @@ import FoodCard from "./FoodCard";
 function SearchResultContainer() {
 
   const {
+    user,
     getTokenSilently,
   } = useContext(auth0Context);
 
   const [searchState, setSearchState] = useState("");
   const [locationState, setLocationState] = useState("Los Angeles, CA");
+  const [savedState, setSavedState] = useState([]);
 
   const [resultState, setResultState] = useState([]);
 
@@ -29,10 +31,13 @@ function SearchResultContainer() {
     });
   };
 
-  const saveRestaurant = async searchData => {
+  const saveRestaurant = async (searchData, resultId) => {
     let token = await getTokenSilently();
     
-    API.saveRestaurant(searchData, token).then((res)=>console.log(res)).catch(err => console.log(err));
+    API.saveRestaurant(searchData, token).then((res)=>{
+      setSavedState(prevState=>[...prevState, resultId, user.name]);
+      console.log(res);
+    }).catch(err => console.log(err));
   }
 
   function handleFormSubmit(e) {
@@ -54,10 +59,12 @@ function SearchResultContainer() {
     setLocationState(event.target.value);
   };
 
-  const handleSave = searchData =>{
-
-    console.log(searchData);
-    saveRestaurant(searchData);
+  const handleSave = (searchData, resultId) =>{
+    if(!savedState.includes(resultId)){
+    saveRestaurant(searchData, resultId);}
+    else{
+      console.log('already exists');
+    }
   }
 
   const keyPressed = event =>{
