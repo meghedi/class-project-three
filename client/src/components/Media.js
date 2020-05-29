@@ -5,15 +5,18 @@ import {
   CardTitle,
   CardBody} from "reactstrap";
 
+import "../assets/css/styles.css";
+
 function Media({ restaurant, cuisines, rating, image, link, address, phone, displayPhone, handleSave }) {
   return (
     <>
-      <div className="section">
+      {/* <div className="section"> */}
         <Card className="mb-3" body outline color="danger">
           <CardTitle>
             <h1>{restaurant}</h1>
           </CardTitle>
           <CardImg
+            className="photo"
             alt={restaurant}
             src={image}
             style={{ width: "50%", margin: "auto" }}
@@ -46,7 +49,7 @@ function Media({ restaurant, cuisines, rating, image, link, address, phone, disp
 
           </CardBody>
         </Card>
-      </div>
+      {/* </div> */}
     </>
   );
 }
