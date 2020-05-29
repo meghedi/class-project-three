@@ -1,0 +1,9 @@
+.photo {
+  border: 1px solid #FFD646;
+  border-radius: 4px;
+  padding: 5px;
+  width: 50%;
+  height: auto;
+  float: left;
+  margin: "auto";
+  }
