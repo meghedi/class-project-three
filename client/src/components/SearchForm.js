@@ -1,43 +1,43 @@
 import React from "react";
-import { Row } from "reactstrap";
-
+import { Form, Row, FormGroup, Col } from "reactstrap";
 
 function SearchForm(props) {
-    return (
-      <form>
-        <div className="form-group" style={{margin: "20px auto", maxWidth:"600px", marginBottom:"40px"}}>
-         <Row>
-         <div className="col ml-auto mr-auto"  style={{paddingRight:"5px"}}>
-          <input
-            name="search"
-            type="text"
-            className="form-control"
-            placeholder="Search for your favorite food"
-            id="search"
-            onChange={props.handleInputChange}
-            onKeyPress = {props.handleKeyPress}
-          />
-          </div>
-          <div className="col ml-auto mr-auto" style={{paddingLeft:"5px"}} md="4">
-          <input
-            name="location"
-            type="text"
-            className="form-control"
-            placeholder="Los Angeles, CA"
-            id="location"
-            onChange={props.handleInputChange}
-          />
-         </div>
-         <div>
+  return (
+    <Form>
+      <Row form className="justify-content-center">
+        <Col md={3} className="px-3">
+          <FormGroup>
+            <input
+              name="search"
+              type="text"
+              className="form-control"
+              placeholder="Search for your favorite food"
+              id="search"
+              onChange={props.handleInputChange}
+              onKeyPress={props.handleKeyPress}
+            />
+          </FormGroup>
+        </Col>
+        <Col md={3} className="px-3">
+          <FormGroup>
+            <input
+              name="location"
+              type="text"
+              className="form-control"
+              placeholder="Los Angeles, CA"
+              id="location"
+              onChange={props.handleInputChange}
+            />
+          </FormGroup>
+        </Col>
+        <Col md={1} className="mb-3">
           <button onClick={props.handleFormSubmit} className="btn btn-danger">
             Search
           </button>
- </div>
- </Row>
-        </div>
-      </form>
-    );
-  }
-
+        </Col>
+      </Row>
+    </Form>
+  );
+}
 
 export default SearchForm;
