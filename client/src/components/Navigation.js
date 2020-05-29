@@ -4,11 +4,9 @@ import {auth0Context} from "../contexts/Auth0Context";
 function Navigation() {
  
   const {
-    isLoading,
     user,
     loginWithRedirect,
     logout,
-    getTokenSilently,
   } = useContext(auth0Context);
 
    console.log(user);

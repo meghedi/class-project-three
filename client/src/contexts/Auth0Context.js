@@ -19,7 +19,8 @@ export class Auth0Provider extends Component {
     domain: "uclaprojectthree.auth0.com",
     client_id: "pJVE5oDnGK6GRx50eY4SS3PNPQwNEsYA",
     audience: "https://fivestarapi/api",
-    redirect_uri: "https://group-project-three.herokuapp.com/",
+    //redirect_uri: process.env.REACT_APP_REDIRECT_URI,
+    redirect_uri:"https://group-project-three.herokuapp.com"
   };
 
   componentDidMount = () => {

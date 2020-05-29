@@ -53,7 +53,7 @@ useEffect(() => {
               location={item.location}
               phone={item.phone}
               previewLink = {item.link}
-              cuisines ={item.categories}
+              cuisines ={item.cuisines}
               handleDeleteRestuarant={deleteRestaurant} 
               id={item._id} />
           </li>
