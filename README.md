@@ -9,7 +9,7 @@ Five Star Foodies allows the user to search for their favorite foods utilizing Y
 
 ## Installing
 
-Git clone the repo ()
+Git clone the repo https://github.com/meghedi/class-project-three.git
 
 Navigate to server.js folder and "npm install" to install the required dependencies.
 
@@ -17,7 +17,7 @@ Navigate to root directory and "npm start" to start client.
 
 ## Deployment (Heroku)
 
-You can see a deployed version ()
+You can see a deployed version https://group-project-three.herokuapp.com/
 
 ## Built With
 
