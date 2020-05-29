@@ -16,7 +16,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    console.log(req.user);
+    console.log('created= ' + req.user);
     db.restaurant
       .create({...req.body, user:req.user.sub})
       .then(dbModel => res.json(dbModel))

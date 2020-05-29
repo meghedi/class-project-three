@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 import SavedRestaurants from "../SavedRestaurants";
 import Wrapper from '../Wrapper';
 import Footer from "../Footer";

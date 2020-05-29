@@ -3,10 +3,10 @@ const restaurantsController = require("../../controllers/restaurantsController")
 const jwt = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
 
-function test(req, res, next){
+/*function test(req, res, next){
   console.log("hello world mine!");
   next();
-}
+}*/
 
 const checkJwt = jwt({
   // Provide a signing key

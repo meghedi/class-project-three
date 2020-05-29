@@ -25,7 +25,9 @@ function SavedMedia({id, title, imgsrc, cuisines, previewLink, location, rating,
               <ul className="list-group list-group-flush center">
                 <li className="list-group-item">Rating: {rating}</li>
                 <li className="list-group-item">Cuisines: 
-             
+                {cuisines.map((category)=>(
+                   <span key={category.alias}>{category.title}, </span>
+                ))}
                 </li>
                 <li className="list-group-item">Phone: <a href={`tel:${phone}`}>{phone}</a></li>
                 <li className="list-group-item">Address : {location}</li>

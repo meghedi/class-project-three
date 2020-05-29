@@ -37,6 +37,9 @@ function SearchResultContainer() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
+    if(!searchState)
+    return;
+
     const searchRequest = {
       term: searchState,
       location: locationState,
@@ -52,6 +55,8 @@ function SearchResultContainer() {
   };
 
   const handleSave = searchData =>{
+
+    console.log(searchData);
     saveRestaurant(searchData);
   }
 

@@ -1,5 +1,4 @@
 import React,{useContext} from "react";
-import {auth0Context} from "../contexts/Auth0Context";
 
 import {
   Card,
@@ -20,14 +19,6 @@ const buttonStyle = {
 };
 
 function FoodCard(props) {
-
-  const {
-    isLoading,
-    user,
-    loginWithRedirect,
-    logout,
-    getTokenSilently,
-  } = useContext(auth0Context);
 
   const searchItem = [
     {
@@ -118,11 +109,12 @@ function FoodCard(props) {
                     <CardText>
                       <button
                         onClick={() => {
-                          if (!user) {
+                          /*if (!user) {
                             loginWithRedirect({});
                           } else {
                             props.handleSelect(item);
-                          }
+                          }*/
+                          props.handleSelect(item)
                         }}
                         style={buttonStyle.button}
                       >
