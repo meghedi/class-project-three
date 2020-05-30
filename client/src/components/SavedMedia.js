@@ -14,7 +14,6 @@ function SavedMedia({id, title, imgsrc, cuisines, previewLink, location, rating,
             <h1>{title}</h1>
           </CardTitle>
           <CardImg
-            className="photo"
             alt={title}
             src={imgsrc}
             style={{ width: "50%", margin: "auto" }}

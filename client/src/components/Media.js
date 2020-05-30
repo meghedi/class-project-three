@@ -19,11 +19,10 @@ function Media({ restaurant, cuisines, rating, image, link, address, phone, disp
             className="photo"
             alt={restaurant}
             src={image}
-            style={{ width: "50%", margin: "auto" }}
             top
             ></CardImg>
 
-          <CardBody>
+          <CardBody className="pr-1">
     
               <ul className="list-group list-group-flush left">
                 <li className="list-group-item">Rating: {rating}</li>
