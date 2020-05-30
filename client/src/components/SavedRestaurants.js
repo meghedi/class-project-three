@@ -5,62 +5,50 @@ import { Container, Row, Col } from "reactstrap";
 
 import { auth0Context } from "../contexts/Auth0Context";
 
-
 function SavedRestaurants() {
-
-  const {
-    isLoading,
-    user,
-    getTokenSilently,
-  } = useContext(auth0Context);
-
+  const { user, getTokenSilently } = useContext(auth0Context);
 
   const [restaurantState, setRestaurantState] = useState([]);
 
-useEffect(() => {
-  if(!isLoading) loadRestaurants();
-}, [getTokenSilently]);
+  useEffect(() => {
+    const fetchData = async () => {
+      let token = await getTokenSilently();
 
- function loadRestaurants(){
+      const result = await API.getRestaurants(user.sub, token);
+      return result;
+    };
+    fetchData().then((result) => setRestaurantState([...result.data]));
+  }, [getTokenSilently, user.sub]);
 
-  const fetchData = async () => {
-    let token = await getTokenSilently();
-
-   const result =  await API.getRestaurants(user.sub,token);
-   setRestaurantState([...result.data]);
-  };
-
-  fetchData();
- }   
-
-  function deleteRestaurant(id){
+  function deleteRestaurant(id) {
     API.deleteRestaurant(id)
-    .then(()=>loadRestaurants())
-    .catch((err) => console.log(err));
+      .then(() => {
+        const newRestaurantState = restaurantState.filter((r) => r._id !== id);
+        console.log(newRestaurantState);
+        setRestaurantState(newRestaurantState);
+      })
+      .catch((err) => console.log(err));
   }
 
- 
   return (
-
-
-<Container className="mt-5">
+    <Container className="mt-5">
       <Row>
         <Col className="ml-auto mr-auto" md="9">
           {restaurantState.length ? (
-              restaurantState.map((item) => (
-                  <SavedMedia
-                    key={item._id}
-                    title={item.restaurant}
-                    imgsrc={item.image}
-                    rating={item.rating}
-                    location={item.location}
-                    phone={item.phone}
-                    previewLink={item.link}
-                    cuisines={item.cuisines}
-                    handleDeleteRestuarant={deleteRestaurant}
-                    id={item._id}
-                  />
-              ))
+            restaurantState.map((item) => (
+              <SavedMedia
+                key={item._id}
+                title={item.restaurant}
+                imgsrc={item.image}
+                rating={item.rating}
+                location={item.location}
+                phone={item.phone}
+                previewLink={item.link}
+                cuisines={item.cuisines}
+                handleDeleteRestuarant={deleteRestaurant}
+                id={item._id}
+              />
+            ))
           ) : (
             <h3>No Results to Display</h3>
           )}

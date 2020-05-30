@@ -46,7 +46,7 @@ function SearchResultContainer() {
     return;
 
     const searchRequest = {
-      term: searchState,
+      term: `best ${searchState}`,
       location: locationState,
       rating: "5",
       limit: 5
