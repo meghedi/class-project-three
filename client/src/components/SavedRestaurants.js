@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
 import SavedMedia from "./SavedMedia";
+import { Container, Row, Col } from "reactstrap";
+
 import { auth0Context } from "../contexts/Auth0Context";
 
 
@@ -9,8 +11,6 @@ function SavedRestaurants() {
   const {
     isLoading,
     user,
-    loginWithRedirect,
-    logout,
     getTokenSilently,
   } = useContext(auth0Context);
 
@@ -41,6 +41,34 @@ useEffect(() => {
 
  
   return (
+
+
+<Container className="mt-5">
+      <Row>
+        <Col className="ml-auto mr-auto" md="9">
+          {restaurantState.length ? (
+              restaurantState.map((item) => (
+                  <SavedMedia
+                    key={item._id}
+                    title={item.restaurant}
+                    imgsrc={item.image}
+                    rating={item.rating}
+                    location={item.location}
+                    phone={item.phone}
+                    previewLink={item.link}
+                    cuisines={item.cuisines}
+                    handleDeleteRestuarant={deleteRestaurant}
+                    id={item._id}
+                  />
+              ))
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
+        </Col>
+      </Row>
+    </Container>
+  );
+/*
     <div>
       {restaurantState.length ? ( 
       <ul >
@@ -63,7 +91,7 @@ useEffect(() => {
         <h3>No Results to Display</h3>
       )}
     </div>
-  );
+  );*/
 }
 
 export default SavedRestaurants;
