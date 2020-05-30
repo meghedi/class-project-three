@@ -68,30 +68,6 @@ useEffect(() => {
       </Row>
     </Container>
   );
-/*
-    <div>
-      {restaurantState.length ? ( 
-      <ul >
-        {restaurantState.map((item) => (
-          <li className="list-group-item mb-3" key={item._id}>
-            <SavedMedia
-              title={item.restaurant}
-              imgsrc={item.image}
-              rating={item.rating} 
-              location={item.location}
-              phone={item.phone}
-              previewLink = {item.link}
-              cuisines ={item.cuisines}
-              handleDeleteRestuarant={deleteRestaurant} 
-              id={item._id} />
-          </li>
-        ))}
-      </ul>
-      ): (
-        <h3>No Results to Display</h3>
-      )}
-    </div>
-  );*/
 }
 
 export default SavedRestaurants;
