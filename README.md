@@ -67,9 +67,9 @@ Password: Demotest123
 
 
 ## Screenshots
-![opening page](README/homepage.jpg)
+![opening page](desktopdemo.gif)
+![search bar](mobiledemo.gif)
 
-![search bar](README/search.jpg)
 
 
 
