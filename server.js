@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 }
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/restaurantsLibrary");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/restaurantsLibrary",{useNewUrlParser: true, useUnifiedTopology: true});
 
 
 app.listen(PORT, function() {

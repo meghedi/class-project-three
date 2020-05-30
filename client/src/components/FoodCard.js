@@ -22,42 +22,48 @@ function FoodCard(props) {
 
   const searchItem = [
     {
-      term: "sushi",
+      term: "best sushi",
+      imageName: "sushi",
       location: "Los Angeles, CA",
       rating: "5",
       limit: 5,
       id: "F1",
     },
     {
-      term: "tacos",
+      term: "best tacos",
+      imageName: "tacos",
       location: "Los Angeles, CA",
       rating: "5",
       limit: 5,
       id: "F",
     },
     {
-      term: "burger",
+      term: "best burger",
+      imageName: "burger",
       location: "Los Angeles, CA",
       rating: "5",
       limit: 5,
       id: "F3",
     },
     {
-      term: "indian",
+      term: "best indian",
+      imageName: "indian",
       location: "Los Angeles, CA",
       rating: "5",
       limit: 5,
       id: "F4",
     },
     {
-      term: "pho",
+      term: "best pho",
+      imageName: "pho",
       location: "Los Angeles, CA",
       rating: "5",
       limit: 5,
       id: "F5",
     },
     {
-      term: "icecream",
+      term: "best icecream",
+      imageName: "icecream",
       location: "Los Angeles, CA",
       rating: "5",
       limit: 5,
@@ -77,7 +83,7 @@ function FoodCard(props) {
                 >
                   <CardImg
                     alt="..."
-                    src={require(`../assets/img/${item.term}.jpg`)}
+                    src={require(`../assets/img/${item.imageName}.jpg`)}
                     top
                   ></CardImg>
                   <CardBody>
@@ -102,7 +108,7 @@ function FoodCard(props) {
                 >
                   <CardImg
                     alt="..."
-                    src={require(`../assets/img/${item.term}.jpg`)}
+                    src={require(`../assets/img/${item.imageName}.jpg`)}
                     top
                   ></CardImg>
                   <CardBody>
@@ -134,7 +140,7 @@ function FoodCard(props) {
                 >
                   <CardImg
                     alt="..."
-                    src={require(`../assets/img/${item.term}.jpg`)}
+                    src={require(`../assets/img/${item.imageName}.jpg`)}
                     top
                   ></CardImg>
                   <CardBody>
