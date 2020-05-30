@@ -60,15 +60,16 @@ Password: Demotest123
 
 
 ## Team
-- Americ Ngwije
 - Meghedi Hacopi
-- Kelli Uyeda
 - Randy Amos
+- Americ Ngwije
+- Kelli Uyeda
+
 
 ## Screenshots
-![opening page](README\homepage.jpg)
+![opening page](README/homepage.jpg)
 
-![search bar](README\search.jpg)
+![search bar](README/search.jpg)
 
 
 
