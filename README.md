@@ -37,6 +37,11 @@ You can see a deployed version https://group-project-three.herokuapp.com/
 - Kelli Uyeda
 - Randy Amos
 
+## Screenshots
+![opening page](README\homepage.jpg)
+
+![search bar](README\search.jpg)
+
 
 
 
