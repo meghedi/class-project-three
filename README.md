@@ -66,9 +66,9 @@ Password: Demotest123
 - Randy Amos
 
 ## Screenshots
-![opening page](README\homepage.jpg)
+![opening page](README/homepage.jpg)
 
-![search bar](README\search.jpg)
+![search bar](README/search.jpg)
 
 
 
