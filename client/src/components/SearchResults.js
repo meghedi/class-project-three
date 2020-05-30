@@ -13,8 +13,8 @@ function SearchResults(props) {
   return (
     <Container className="mt-5">
         <Row>
-          <Col className="ml-auto mr-auto" md="9">
             {props.results.map((result) => (
+            <Col className="" md="4">
               <Media
                 key={result.id}
                 restaurant={result.name}
@@ -43,8 +43,8 @@ function SearchResults(props) {
               }
                 }
               />
+            </Col>
             ))}
-          </Col>
         </Row>
     </Container>
   );

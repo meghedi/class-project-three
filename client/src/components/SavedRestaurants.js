@@ -23,7 +23,7 @@ function SavedRestaurants() {
   function deleteRestaurant(id) {
     API.deleteRestaurant(id)
       .then(() => {
-        const newRestaurantState = restaurantState.filter((r) => r._id !== id);
+        const newRestaurantState = restaurantState.filter((r) => r.id !== id);
         console.log(newRestaurantState);
         setRestaurantState(newRestaurantState);
       })
@@ -33,9 +33,9 @@ function SavedRestaurants() {
   return (
     <Container className="mt-5">
       <Row>
-        <Col className="ml-auto mr-auto" md="9">
           {restaurantState.length ? (
             restaurantState.map((item) => (
+              <Col md="4">
               <SavedMedia
                 key={item._id}
                 title={item.restaurant}
@@ -48,11 +48,11 @@ function SavedRestaurants() {
                 handleDeleteRestuarant={deleteRestaurant}
                 id={item._id}
               />
+              </Col>
             ))
           ) : (
             <h3>No Results to Display</h3>
           )}
-        </Col>
       </Row>
     </Container>
   );
