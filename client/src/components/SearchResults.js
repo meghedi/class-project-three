@@ -14,9 +14,8 @@ function SearchResults(props) {
     <Container className="mt-5">
         <Row>
             {props.results.map((result) => (
-            <Col className="" md="4">
+            <Col md="4"  key={result.id}>
               <Media
-                key={result.id}
                 restaurant={result.name}
                 image={result.image_url}
                 rating={result.rating}

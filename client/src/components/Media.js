@@ -7,16 +7,14 @@ import {
 
 import "../assets/css/styles.css";
 
-function Media({ restaurant, cuisines, rating, image, link, address, phone, displayPhone, handleSave }) {
+function Media({ id, restaurant, cuisines, rating, image, link, address, phone, displayPhone, handleSave, handleDeleteRestuarant }) {
   return (
     <>
-      {/* <div className="section"> */}
         <Card className="mb-3" body outline color="danger">
           <CardTitle>
             <h1>{restaurant}</h1>
           </CardTitle>
           <CardImg
-            className="photo"
             alt={restaurant}
             src={image}
             top
@@ -37,18 +35,30 @@ function Media({ restaurant, cuisines, rating, image, link, address, phone, disp
                   Yelp Listing
                 </a>
               </ul>
-              <button
-                type="button"
-                id="btnSave"
-                className="btn btn-danger btn-lg active"
-                onClick={handleSave}
-              >
-                Save
-              </button>
+              {window.location.pathname === "/saved" ? (
+            <button
+            type="button"
+            id="btnDelete"
+            className="btn btn-danger"
+            onClick={()=>handleDeleteRestuarant(id)}
+            >
+            Delete
+            </button>
+      ):(
+
+        <button
+        type="button"
+        id="btnSave"
+        className="btn btn-danger btn-lg active"
+        onClick={handleSave}
+      >
+        Save
+      </button>      )}
+
+
 
           </CardBody>
         </Card>
-      {/* </div> */}
     </>
   );
 }

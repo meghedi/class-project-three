@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
-import SavedMedia from "./SavedMedia";
+import Media from "./Media";
 import { Container, Row, Col } from "reactstrap";
 
 import { auth0Context } from "../contexts/Auth0Context";
@@ -23,7 +23,7 @@ function SavedRestaurants() {
   function deleteRestaurant(id) {
     API.deleteRestaurant(id)
       .then(() => {
-        const newRestaurantState = restaurantState.filter((r) => r.id !== id);
+        const newRestaurantState = restaurantState.filter((r) => r._id !== id);
         console.log(newRestaurantState);
         setRestaurantState(newRestaurantState);
       })
@@ -35,15 +35,15 @@ function SavedRestaurants() {
       <Row>
           {restaurantState.length ? (
             restaurantState.map((item) => (
-              <Col md="4">
-              <SavedMedia
-                key={item._id}
-                title={item.restaurant}
-                imgsrc={item.image}
+              <Col md="4" key={item._id} >
+              <Media
+                restaurant={item.restaurant}
+                image={item.image}
                 rating={item.rating}
-                location={item.location}
+                address={item.location}
                 phone={item.phone}
-                previewLink={item.link}
+                displayPhone={item.phone}
+                link={item.link}
                 cuisines={item.cuisines}
                 handleDeleteRestuarant={deleteRestaurant}
                 id={item._id}
