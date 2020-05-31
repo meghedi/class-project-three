@@ -49,7 +49,7 @@ function SearchResultContainer() {
       term: `best ${searchState}`,
       location: locationState,
       rating: "5",
-      limit: 5
+      limit: 6
     };
     searcbyFood(searchRequest);  
   }
@@ -61,9 +61,11 @@ function SearchResultContainer() {
 
   const handleSave = (searchData, resultId) =>{
     if(!savedState.includes(resultId)){
-    saveRestaurant(searchData, resultId);}
-    else{
+    saveRestaurant(searchData, resultId);
+    alert("Item Saved!");
+    }else{
       console.log('already exists');
+      alert("Item Already exists in your favorites!");
     }
   }
 
