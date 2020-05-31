@@ -49,7 +49,7 @@ function SearchResultContainer() {
       term: `best ${searchState}`,
       location: locationState,
       rating: "5",
-      limit: 5
+      limit: 6
     };
     searcbyFood(searchRequest);  
   }
