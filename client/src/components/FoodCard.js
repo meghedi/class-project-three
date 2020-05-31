@@ -26,7 +26,7 @@ function FoodCard(props) {
       imageName: "sushi",
       location: "Los Angeles, CA",
       rating: "5",
-      limit: 5,
+      limit: 6,
       id: "F1",
     },
     {
@@ -34,7 +34,7 @@ function FoodCard(props) {
       imageName: "tacos",
       location: "Los Angeles, CA",
       rating: "5",
-      limit: 5,
+      limit: 6,
       id: "F",
     },
     {
@@ -42,7 +42,7 @@ function FoodCard(props) {
       imageName: "burger",
       location: "Los Angeles, CA",
       rating: "5",
-      limit: 5,
+      limit: 6,
       id: "F3",
     },
     {
@@ -50,7 +50,7 @@ function FoodCard(props) {
       imageName: "indian",
       location: "Los Angeles, CA",
       rating: "5",
-      limit: 5,
+      limit: 6,
       id: "F4",
     },
     {
@@ -58,7 +58,7 @@ function FoodCard(props) {
       imageName: "pho",
       location: "Los Angeles, CA",
       rating: "5",
-      limit: 5,
+      limit: 6,
       id: "F5",
     },
     {
@@ -66,7 +66,7 @@ function FoodCard(props) {
       imageName: "icecream",
       location: "Los Angeles, CA",
       rating: "5",
-      limit: 5,
+      limit: 6,
       id: "F6",
     },
   ];
