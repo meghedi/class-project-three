@@ -10,7 +10,9 @@ import {
 
 import "../assets/css/styles.css";
 
+
 function Media({
+  id,
   restaurant,
   cuisines,
   rating,
@@ -20,25 +22,21 @@ function Media({
   phone,
   displayPhone,
   handleSave,
+  handleDeleteRestuarant,
 }) {
   return (
     <>
       <CardDeck>
-        <Card className="mb-3" body outline color="danger">
-          <CardImg
-            // className="photo"
-            alt={restaurant}
-            src={image}
-            height="300px"
-          ></CardImg>
-          <CardImgOverlay>
-            <CardTitle 
-            className="photo"
-            style={{ backgroundColor: '#FFD746', borderColor: '#333' }}>
-              <h2>{restaurant}</h2>
+        <Card className="mb-3" body outline color="danger" style={{padding:"0px"}}>
+        <CardImgOverlay style={{height:"30%", padding:"0px"}}>
+            <CardTitle
+              className="photo"
+              style={{ backgroundColor: "#FFD746", borderColor: "#333", paddingBottom:"3px", paddingTop:"3px" }}
+            >
+              <h4>{restaurant}</h4>
             </CardTitle>
           </CardImgOverlay>
-
+          <CardImg alt={restaurant} src={image}></CardImg>
           <CardBody className="pr-1">
             <ul className="list-group list-group-flush left">
               <li className="list-group-item">Rating: {rating}</li>
@@ -59,14 +57,25 @@ function Media({
                 Yelp Listing
               </a>
             </ul>
-            <button
-              type="button"
-              id="btnSave"
-              className="btn btn-danger btn-lg active"
-              onClick={handleSave}
-            >
-              Save
-            </button>
+            {window.location.pathname === "/saved" ? (
+              <button
+                type="button"
+                id="btnDelete"
+                className="btn btn-danger"
+                onClick={() => handleDeleteRestuarant(id)}
+              >
+                Delete
+              </button>
+            ) : (
+              <button
+                type="button"
+                id="btnSave"
+                className="btn btn-danger btn-lg active"
+                onClick={handleSave}
+              >
+                Save
+              </button>
+            )}
           </CardBody>
         </Card>
       </CardDeck>

@@ -4,7 +4,7 @@ import { Form, Row, FormGroup, Col } from "reactstrap";
 function SearchForm(props) {
   return (
     <Form>
-      <Row form className="justify-content-center">
+      <Row form className="justify-content-center" style={{marginRight:"0px", marginLeft:"0px"}}>
         <Col md={3} className="px-3">
           <FormGroup>
             <input
