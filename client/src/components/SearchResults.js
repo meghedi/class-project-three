@@ -12,9 +12,9 @@ function SearchResults(props) {
 
   return (
     <Container className="mt-5">
-        <Row>
+        {/* <Row> */}
             {props.results.map((result) => (
-            <Col md="4"  key={result.id}>
+            // <Col md="4"  key={result.id}>
               <Media
                 restaurant={result.name}
                 image={result.image_url}
@@ -42,9 +42,9 @@ function SearchResults(props) {
               }
                 }
               />
-            </Col>
+            // </Col>
             ))}
-        </Row>
+        {/* </Row> */}
     </Container>
   );
 }

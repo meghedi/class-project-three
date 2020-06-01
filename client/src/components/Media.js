@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Row,
+  Col,
   Card,
   CardImg,
   CardTitle,
@@ -26,18 +28,21 @@ function Media({
 }) {
   return (
     <>
-      <CardDeck>
+      {/* <CardDeck> */}
         <Card className="mb-3" body outline color="danger" style={{padding:"0px"}}>
-        <CardImgOverlay style={{height:"30%", padding:"0px"}}>
-            <CardTitle
-              className="photo"
-              style={{ backgroundColor: "#FFD746", borderColor: "#333", paddingBottom:"3px", paddingTop:"3px" }}
-            >
-              <h4>{restaurant}</h4>
+        <Row className="no-gutters">
+        <Col md="4">
+          <CardImg 
+          alt={restaurant} 
+          src={image} 
+          className="photo"
+          ></CardImg>
+          </Col>
+          <Col md="8">
+          <CardBody>
+          <CardTitle            >
+              <h1>{restaurant}</h1>
             </CardTitle>
-          </CardImgOverlay>
-          <CardImg alt={restaurant} src={image}></CardImg>
-          <CardBody className="pr-1">
             <ul className="list-group list-group-flush left">
               <li className="list-group-item">Rating: {rating}</li>
               <li className="list-group-item">
@@ -49,7 +54,9 @@ function Media({
               <li className="list-group-item">
                 Phone: <a href={`tel:${phone}`}>{displayPhone}</a>
               </li>
-              <li className="list-group-item">Address : {address}</li>
+              <li className="list-group-item">
+                Address : <a href={'https://www.google.com/maps/place/' + address} target="_blank">{address}</a>
+                </li>
               <a
                 href={link}
                 className="list-group-item list-group-item-action text-danger fab fa-yelp"
@@ -77,8 +84,11 @@ function Media({
               </button>
             )}
           </CardBody>
+          </Col>
+          </Row>
         </Card>
-      </CardDeck>
+
+      {/* </CardDeck> */}
     </>
   );
 }
