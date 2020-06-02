@@ -71,12 +71,12 @@ function FoodCard(props) {
     },
   ];
   return (
-    <>
-      <div className="section">
-        <Container>
+
+        <Container style={{marginTop:"30px"}}>
           <Row>
-            <Col className="ml-auto mr-auto" md="4">
-              {searchItem.slice(0, 2).map((item) => (
+             <hr />
+              {searchItem.map((item) => (
+                            <Col className="ml-auto mr-auto" md="4">
                 <Card
                   style={{ width: "20rem", marginBottom: "10px" }}
                   key={item.id}
@@ -97,70 +97,12 @@ function FoodCard(props) {
                     </CardText>
                   </CardBody>
                 </Card>
+                </Col>
               ))}
-            </Col>
+
             <hr />
-            <Col className="ml-auto mr-auto" md="4">
-              {searchItem.slice(2, 4).map((item) => (
-                <Card
-                  style={{ width: "20rem", marginBottom: "10px" }}
-                  key={item.id}
-                >
-                  <CardImg
-                    alt="..."
-                    src={require(`../assets/img/${item.imageName}.jpg`)}
-                    top
-                  ></CardImg>
-                  <CardBody>
-                    <CardText>
-                      <button
-                        onClick={() => {
-                          /*if (!user) {
-                            loginWithRedirect({});
-                          } else {
-                            props.handleSelect(item);
-                          }*/
-                          props.handleSelect(item)
-                        }}
-                        style={buttonStyle.button}
-                      >
-                        <b>{item.term.toUpperCase()}</b>
-                      </button>
-                    </CardText>
-                  </CardBody>
-                </Card>
-              ))}
-            </Col>
-            <hr />
-            <Col className="ml-auto mr-auto" md="4">
-              {searchItem.slice(4, 6).map((item) => (
-                <Card
-                  style={{ width: "20rem", marginBottom: "10px" }}
-                  key={item.id}
-                >
-                  <CardImg
-                    alt="..."
-                    src={require(`../assets/img/${item.imageName}.jpg`)}
-                    top
-                  ></CardImg>
-                  <CardBody>
-                    <CardText>
-                      <button
-                        onClick={() => props.handleSelect(item)}
-                        style={buttonStyle.button}
-                      >
-                        <b>{item.term.toUpperCase()}</b>
-                      </button>
-                    </CardText>
-                  </CardBody>
-                </Card>
-              ))}
-            </Col>
-            <hr />
-          </Row>
-        </Container>
-      </div>
-    </>
+           </Row>
+           </Container>
   );
 }
 

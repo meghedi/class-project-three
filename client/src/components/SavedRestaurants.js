@@ -32,11 +32,10 @@ function SavedRestaurants() {
 
   return (
     <Container className="mt-5">
-      {/* <Row> */}
           {restaurantState.length ? (
             restaurantState.map((item) => (
-              // <Col md="4" key={item._id} >
               <Media
+                key={item._id}
                 restaurant={item.restaurant}
                 image={item.image}
                 rating={item.rating}
@@ -48,12 +47,10 @@ function SavedRestaurants() {
                 handleDeleteRestuarant={deleteRestaurant}
                 id={item._id}
               />
-              // </Col>
             ))
           ) : (
             <h3>No Results to Display</h3>
           )}
-      {/* </Row> */}
     </Container>
   );
 }
