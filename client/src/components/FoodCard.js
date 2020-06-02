@@ -19,7 +19,6 @@ const buttonStyle = {
 };
 
 function FoodCard(props) {
-
   const searchItem = [
     {
       term: "best sushi",
@@ -71,38 +70,37 @@ function FoodCard(props) {
     },
   ];
   return (
+    <Container style={{ marginTop: "30px" }}>
+      <Row>
+        <hr />
+        {searchItem.map((item) => (
+          <Col className="ml-auto mr-auto" md="4" key={item.id}>
+            <Card
+              style={{ width: "20rem", marginBottom: "10px" }}
+              key={item.id}
+            >
+              <CardImg
+                alt="..."
+                src={require(`../assets/img/${item.imageName}.jpg`)}
+                top
+              ></CardImg>
+              <CardBody>
+                <CardText>
+                  <button
+                    onClick={() => props.handleSelect(item)}
+                    style={buttonStyle.button}
+                  >
+                    <b>{item.term.toUpperCase()}</b>
+                  </button>
+                </CardText>
+              </CardBody>
+            </Card>
+          </Col>
+        ))}
 
-        <Container style={{marginTop:"30px"}}>
-          <Row>
-             <hr />
-              {searchItem.map((item) => (
-                            <Col className="ml-auto mr-auto" md="4">
-                <Card
-                  style={{ width: "20rem", marginBottom: "10px" }}
-                  key={item.id}
-                >
-                  <CardImg
-                    alt="..."
-                    src={require(`../assets/img/${item.imageName}.jpg`)}
-                    top
-                  ></CardImg>
-                  <CardBody>
-                    <CardText>
-                      <button
-                        onClick={() => props.handleSelect(item)}
-                        style={buttonStyle.button}
-                      >
-                        <b>{item.term.toUpperCase()}</b>
-                      </button>
-                    </CardText>
-                  </CardBody>
-                </Card>
-                </Col>
-              ))}
-
-            <hr />
-           </Row>
-           </Container>
+        <hr />
+      </Row>
+    </Container>
   );
 }
 
