@@ -1,3 +1,15 @@
 .photo {
   width:100%
   }
+
+  .welcomeName{
+    position: absolute;
+    right:20px;
+  }
+
+  @media (max-width: 1000px) {
+    .welcomeName{
+      display: none;
+    }
+
+  }

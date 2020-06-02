@@ -28,7 +28,6 @@ function Media({
 }) {
   return (
     <>
-      {/* <CardDeck> */}
         <Card className="mb-3" body outline color="danger" style={{padding:"0px"}}>
         <Row className="no-gutters">
         <Col md="4">
@@ -87,8 +86,6 @@ function Media({
           </Col>
           </Row>
         </Card>
-
-      {/* </CardDeck> */}
     </>
   );
 }

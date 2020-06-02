@@ -30,7 +30,7 @@ function Navigation() {
             </Nav.Link>
           )}
           {user && (
-            <h6 style={{position:"absolute", right:"20px"}}>Welcome {user.given_name}</h6>
+            <h6 className="welcomeName">Welcome {user.given_name}</h6>
 
           )}
         </Nav>
