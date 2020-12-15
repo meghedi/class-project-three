@@ -29,7 +29,7 @@
     "express-jwt": "^6.0.0",
     "if-env": "^1.0.4",
     "jwks-rsa": "^1.12.0",
-    "mongoose": "^5.11.7",
+    "mongoose": "^5.11.8",
     "react-bootstrap": "^1.4.0",
     "react-router-dom": "^5.2.0",
     "yelp-fusion": "^3.0.0"
