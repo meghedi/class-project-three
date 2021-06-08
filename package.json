@@ -30,7 +30,7 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.12.7",
     "jwks-rsa": "^2.0.3",
-    "react-bootstrap": "^1.5.2",
+    "react-bootstrap": "^1.6.1",
     "react-router-dom": "^5.2.0",
     "yelp-fusion": "^3.0.0"
   }
