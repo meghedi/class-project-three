@@ -17,7 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^6.2.0",
-    "nodemon": "^2.0.11"
+    "nodemon": "^2.0.12"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.16.1",
@@ -29,7 +29,7 @@
     "express-jwt": "^6.0.0",
     "if-env": "^1.0.4",
     "mongoose": "^5.13.3",
-    "jwks-rsa": "^2.0.3",
+    "jwks-rsa": "^2.0.4",
     "react-bootstrap": "^1.6.1",
     "react-router-dom": "^5.2.0",
     "yelp-fusion": "^3.0.0"
