@@ -20,7 +20,7 @@
     "nodemon": "^2.0.12"
   },
   "dependencies": {
-    "@auth0/auth0-spa-js": "^1.16.1",
+    "@auth0/auth0-spa-js": "^1.17.0",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "cors": "^2.8.5",
