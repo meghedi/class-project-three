@@ -31,7 +31,7 @@
     "mongoose": "^5.13.8",
     "jwks-rsa": "^2.0.4",
     "react-bootstrap": "^1.6.1",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^5.2.1",
     "yelp-fusion": "^3.0.0"
   }
 }
