@@ -20,7 +20,7 @@
     "nodemon": "^2.0.12"
   },
   "dependencies": {
-    "@auth0/auth0-spa-js": "^1.17.0",
+    "@auth0/auth0-spa-js": "^1.17.1",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.0",
     "cors": "^2.8.5",
@@ -28,10 +28,10 @@
     "express": "^4.16.3",
     "express-jwt": "^6.1.0",
     "if-env": "^1.0.4",
-    "mongoose": "^6.0.3",
+    "mongoose": "^6.0.5",
     "jwks-rsa": "^2.0.4",
     "react-bootstrap": "^1.6.1",
-    "react-router-dom": "^5.2.1",
+    "react-router-dom": "^5.3.0",
     "yelp-fusion": "^3.0.0"
   }
 }
